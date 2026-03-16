@@ -1,1 +1,3 @@
-This is a new file created by the %%writefile magic command in Jupyter Notebook.
+This is a new line added to the file.
+This is another line added to the file.
+This line is added to the end of the file using append mode.
