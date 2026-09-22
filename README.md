@@ -1,53 +1,82 @@
 # Python Learning Notebooks
 
-A small collection of Jupyter notebooks used to learn and demonstrate basic Python concepts.
+A collection of 12 Jupyter notebooks for learning Python through short examples, exercises, and interactive demos. Topics include basic syntax, strings, collections, Boolean values, and file handling.
 
-## Contents
+## Notebook Guide
 
-- `python-start.ipynb` — Quick introduction and first steps.
-- `python-lists.ipynb` — Working with lists and common operations.
-- `python-tuples.ipynb` — Tuple usage and differences from lists.
-- `python-dictionaries.ipynb` — Creating and manipulating dictionaries.
-- `python-fun.ipynb` — Miscellaneous examples and exercises.
+Start with the introduction, then explore the topics below. All notebooks are in [`notebooks/`](notebooks/).
 
-## Requirements
+| Notebook | What it covers |
+| --- | --- |
+| [First steps](notebooks/python-start.ipynb) | Basic calculations, indentation, types, and Python syntax. |
+| [Strings](notebooks/python-strings.ipynb) | Indexing, slicing, immutability, string methods, and formatting with `format()` and f-strings. |
+| [Lists](notebooks/python-lists.ipynb) | Creating and modifying lists, slicing, sorting, enumeration, comprehensions, nested lists, and shallow copying. |
+| [Tuples](notebooks/python-tuples.ipynb) | Immutable sequences, indexing, tuple methods, packing, unpacking, and nesting. |
+| [Sets](notebooks/python-sets.ipynb) | Creating sets, adding items, uniqueness, and removing duplicate characters. |
+| [Dictionaries](notebooks/python-dictionaries.ipynb) | Creating, reading, updating, and deleting entries; methods, iteration, nesting, comprehensions, and frequency counting. |
+| [Booleans](notebooks/python-booleans.ipynb) | Introductory examples of `True`, `False`, equality comparisons, and `or`. |
+| [File handling](notebooks/python-files.ipynb) | Reading, writing, appending, file positions, context managers, and file modes. |
+| [Practice exercises](notebooks/python-fun.ipynb) | Loops with strings and a list-based to-do example. |
+| [Tic-tac-toe](notebooks/python-tic-tac-toe.ipynb) | An interactive widget-based game with winner checks and a reset control. |
+| [Emoji rain](notebooks/python-emoji-rain.ipynb) | An animated widget demo using random values, timing, and a background thread. |
+| [Simple example](notebooks/example.ipynb) | Printing a greeting and a fruit list. |
 
-All Python package dependencies are listed in `requirements.txt`.
+## Repository Layout
+
+```text
+notebooks/        Jupyter notebooks for lessons, exercises, and demos
+files/            Sample text files used by the file-handling notebook
+example.py        Standalone greeting and list example
+requirements.txt  Existing package notes (see setup below)
+LICENSE           MIT license
+```
 
 ## Setup
 
-Recommended steps to get a local environment running (PowerShell):
+Use Python 3 with pip. Run these commands from the repository root in PowerShell:
 
-```pwsh
+```powershell
 python -m venv .venv
-.\\.venv\\Scripts\\Activate.ps1
-pip install -r requirements.txt
+.\.venv\Scripts\Activate.ps1
+python -m pip install jupyterlab ipywidgets
 ```
 
-If you don't need a virtual environment, you can directly install the requirements:
+JupyterLab provides the notebook interface. `ipywidgets` supports the tic-tac-toe and emoji-rain demos. The basic lessons primarily use Python's built-in features and standard library.
 
-```pwsh
-pip install -r requirements.txt
+The current [`requirements.txt`](requirements.txt) contains `import numpy`, `import pandas`, and `import requests` rather than pip requirement entries, so it cannot currently be used with `pip install -r requirements.txt`. If you want these additional packages for experimentation, install them directly:
+
+```powershell
+python -m pip install numpy pandas requests
 ```
 
-## Running the notebooks
+## Running the Examples
 
-Start Jupyter Notebook or JupyterLab from the project root and open any `.ipynb` file:
+With the virtual environment active, start JupyterLab from the repository root:
 
-```pwsh
-jupyter notebook
-# or
+```powershell
 jupyter lab
 ```
 
+Open a notebook in `notebooks/` and select the Python kernel associated with `.venv`. Run cells from top to bottom because later examples often depend on variables created or modified earlier. Restart the kernel when you want to begin with a clean state.
+
+You can also open the notebooks in VS Code with the Python and Jupyter extensions and select `.venv` as the notebook kernel.
+
+To run the standalone example from the repository root:
+
+```powershell
+python example.py
+```
+
+### Notes for Specific Notebooks
+
+- **File handling:** Relative paths such as `../files/temp.txt` assume the kernel's working directory is `notebooks/`. Check it with `%pwd` and, if it is the repository root, use `%cd notebooks` before running the examples. Some cells create, overwrite, or append to files in `files/`.
+- **Expected errors:** The strings notebook demonstrates an invalid attempt to modify a string. The file-handling notebook demonstrates opening a missing file and exclusive creation of an existing file. These cells intentionally raise errors; inspect the explanation and continue with the next cell.
+- **Interactive demos:** Run the setup cell to display the widgets. Use the emoji-rain demo's stop control to end the animation and the tic-tac-toe reset control to start a new game.
+
 ## Contributing
 
-This repository is for personal learning. Contributions or improvements are welcome — open an issue or submit a pull request if you'd like to suggest changes.
+This repository is for personal learning. Corrections, clearer explanations, and additional exercises are welcome through issues or pull requests. Keep examples focused and include any setup instructions they require.
 
 ## License
 
-This project is licensed under the terms in the `LICENSE` file.
-
----
-
-If you'd like any specific wording, badges, or additional sections (examples, CI, usage notes), tell me what to include and I will update this file accordingly.
+Licensed under the [MIT License](LICENSE). Copyright (c) 2024 Kanwal Preet Singh.
