@@ -18,7 +18,7 @@ Start with the introduction, then explore the topics below. All notebooks are in
 | [Comparison operators](notebooks/python-operators.ipynb) | The six comparison operators, chained comparisons, logical conditions, string comparisons, equality versus identity, and floating-point comparisons; includes practice exercises, hints, and solutions. |
 | [Conditional statements](notebooks/python-statements.ipynb) | `if`, `elif`, and `else`; indentation, truthiness, branch order, and case-sensitive string comparisons, with practice prompts. |
 | [Loops](notebooks/python-loop.ipynb) | `for` and `while` loops, running totals, tuple unpacking, dictionary iteration, loop `else`, and control with `pass`, `continue`, and `break`. |
-| [Functions](notebooks/python-functions.ipynb) | Definitions, defaults, printing versus returning, argument types and `+`, even-number checks and filtering, tuple unpacking, a guessing game, `*args`, `**kwargs`, and alternating-case string exercises. |
+| [Functions](notebooks/python-functions.ipynb) | Definitions, defaults, printing versus returning, argument types and `+`, even-number checks and filtering, tuple unpacking, a guessing game, `*args`, `**kwargs`, alternating-case string exercises, `map()`, `filter()`, and lambda expressions. |
 | [File handling](notebooks/python-files.ipynb) | Reading, writing, appending, file positions, context managers, and file modes. |
 | [Practice exercises](notebooks/python-fun.ipynb) | Loops with strings and a list-based to-do example. |
 | [Tic-tac-toe](notebooks/python-tic-tac-toe.ipynb) | An interactive widget-based game with winner checks and a reset control. |
@@ -79,6 +79,7 @@ python example.py
 - **Statements and loops:** Change inputs to explore different branches and iterations. The loops notebook reuses variables such as `my_list`; rerun the relevant setup cell before revisiting an example. When experimenting with `while`, keep an update or exit condition that lets the loop finish; interrupt the kernel if it runs indefinitely.
 - **Functions:** Run the definitions before their calls. Later cells redefine `print_hello` to accept a default name and change `check_even_list` from returning a Boolean to returning a list of even numbers. Several versions of `my_func` demonstrate fixed parameters, `*args`, `**kwargs`, and the final filtering and string exercises; each definition replaces the previous one. Rerun the corresponding definition when revisiting an earlier example. Compare the value returned by `add_numbers` with the `None` returned by `print_item`. The guessing game waits for input: enter `0`, `1`, or `2` at the prompt.
 - **Interactive demos:** Run the setup cell to display the widgets. Use the emoji-rain demo's stop control to end the animation and the tic-tac-toe reset control to start a new game.
+- **Map, filter, and lambdas:** The final functions section transforms numbers and strings with `map()`, keeps matching numbers with `filter()`, and uses short lambda expressions as callbacks. Both built-ins return iterators; the examples consume them with a loop or `list()`. Run the section in order: `my_nums` changes from five numbers to six, `check_even` is redefined, and a lambda replaces the named `square` function. The final example reverses each name's characters while preserving the order of the names.
 
 ## Contributing
 
