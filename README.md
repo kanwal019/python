@@ -1,6 +1,6 @@
 # Python Learning Notebooks
 
-A collection of 16 Jupyter notebooks for learning Python through short examples, exercises, and interactive demos. Topics include basic syntax, strings, collections, Boolean values, comparison operators, conditional statements, loops, functions, and file handling.
+A collection of 16 Jupyter notebooks for learning Python through short examples, exercises, and interactive demos. Topics include basic syntax, strings, collections, Boolean values, comparison operators, conditional statements, loops, functions, variable scope, and file handling.
 
 ## Notebook Guide
 
@@ -18,7 +18,7 @@ Start with the introduction, then explore the topics below. All notebooks are in
 | [Comparison operators](notebooks/python-operators.ipynb) | The six comparison operators, chained comparisons, logical conditions, string comparisons, equality versus identity, and floating-point comparisons; includes practice exercises, hints, and solutions. |
 | [Conditional statements](notebooks/python-statements.ipynb) | `if`, `elif`, and `else`; indentation, truthiness, branch order, and case-sensitive string comparisons, with practice prompts. |
 | [Loops](notebooks/python-loop.ipynb) | `for` and `while` loops, running totals, tuple unpacking, dictionary iteration, loop `else`, and control with `pass`, `continue`, and `break`. |
-| [Functions](notebooks/python-functions.ipynb) | Definitions, defaults, printing versus returning, argument types and `+`, even-number checks and filtering, tuple unpacking, a guessing game, `*args`, `**kwargs`, alternating-case string exercises, `map()`, `filter()`, and lambda expressions. |
+| [Functions](notebooks/python-functions.ipynb) | Definitions, defaults, printing versus returning, argument types and `+`, even-number checks and filtering, tuple unpacking, a guessing game, `*args`, `**kwargs`, alternating-case string exercises, `map()`, `filter()`, lambda expressions, nested functions, LEGB scope, `global`, and ten additional function exercises. |
 | [File handling](notebooks/python-files.ipynb) | Reading, writing, appending, file positions, context managers, and file modes. |
 | [Practice exercises](notebooks/python-fun.ipynb) | Loops with strings and a list-based to-do example. |
 | [Tic-tac-toe](notebooks/python-tic-tac-toe.ipynb) | An interactive widget-based game with winner checks and a reset control. |
@@ -79,7 +79,26 @@ python example.py
 - **Statements and loops:** Change inputs to explore different branches and iterations. The loops notebook reuses variables such as `my_list`; rerun the relevant setup cell before revisiting an example. When experimenting with `while`, keep an update or exit condition that lets the loop finish; interrupt the kernel if it runs indefinitely.
 - **Functions:** Run the definitions before their calls. Later cells redefine `print_hello` to accept a default name and change `check_even_list` from returning a Boolean to returning a list of even numbers. Several versions of `my_func` demonstrate fixed parameters, `*args`, `**kwargs`, and the final filtering and string exercises; each definition replaces the previous one. Rerun the corresponding definition when revisiting an earlier example. Compare the value returned by `add_numbers` with the `None` returned by `print_item`. The guessing game waits for input: enter `0`, `1`, or `2` at the prompt.
 - **Interactive demos:** Run the setup cell to display the widgets. Use the emoji-rain demo's stop control to end the animation and the tic-tac-toe reset control to start a new game.
-- **Map, filter, and lambdas:** The final functions section transforms numbers and strings with `map()`, keeps matching numbers with `filter()`, and uses short lambda expressions as callbacks. Both built-ins return iterators; the examples consume them with a loop or `list()`. Run the section in order: `my_nums` changes from five numbers to six, `check_even` is redefined, and a lambda replaces the named `square` function. The final example reverses each name's characters while preserving the order of the names.
+- **Map, filter, and lambdas:** The map and filter section transforms numbers and strings with `map()`, keeps matching numbers with `filter()`, and uses short lambda expressions as callbacks. Both built-ins return iterators; the examples consume them with a loop or `list()`. Run the section in order: `my_nums` changes from five numbers to six, `check_even` is redefined, and a lambda replaces the named `square` function. The section ends by reversing each name's characters while preserving the order of the names.
+- **Nested statements and scope:** Follow the LEGB lookup order: local, enclosing, global, then built-in. The examples demonstrate shadowing, case-sensitive names (`X` versus `x`), and updating a module-level variable with `global`. The explanations also distinguish reading an enclosing name from rebinding it with `nonlocal`. Run the cells in order because `greet`, `func`, and `x` are redefined; the later `func()` takes no arguments and changes the global `x` from `50` to `100` when called.
+- **Function practice:** The functions notebook ends with ten exercises and worked solutions covering numeric conditions, string transformations, adjacent list values, and summing selected values. Try each prompt before running its solution, then compare the sample calls with your own inputs. `animal_crackers` expects a two-word string and ignores letter case; `blackjack` expects three integers between `1` and `11`; `summer_69` assumes each `6` is followed by a `9`.
+
+### Function Practice Guide
+
+These exercises are in [`python-functions.ipynb`](notebooks/python-functions.ipynb), after the scope examples.
+
+| Function | Practice topic |
+| --- | --- |
+| `lesser_of_two_evens` | Return the smaller number when both are even, otherwise the larger. |
+| `animal_crackers` | Compare the first letters of two words without case sensitivity. |
+| `makes_twenty` | Check whether either number or their sum equals `20`. |
+| `old_macdonald` | Capitalize the first and fourth letters of a name, with a message for names shorter than four characters. |
+| `master_yoda` | Reverse word order using splitting, slicing, and joining. |
+| `almost_there` | Use absolute differences to check whether a number is within `10` of `100` or `200`. |
+| `has_33` | Scan a list for adjacent `3` values. |
+| `paper_doll` | Repeat each character three times. |
+| `blackjack` | Practice conditional scoring with a total of `21`, an adjustment for `11`, and a `BUST` result. |
+| `summer_69` | Sum list values while skipping each section from `6` through the next `9`, inclusive. |
 
 ## Contributing
 
