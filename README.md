@@ -18,7 +18,7 @@ Start with the introduction, then explore the topics below. All notebooks are in
 | [Operators and iteration tools](notebooks/python-operators.ipynb) | Comparisons, logical and membership operators, equality versus identity, floating-point comparisons, `range()`, `enumerate()`, `zip()`, `min()`, `max()`, random values, and user input; includes practice exercises, hints, and solutions. |
 | [Conditional statements](notebooks/python-statements.ipynb) | `if`, `elif`, and `else`; indentation, truthiness, branch order, and case-sensitive string comparisons, with practice prompts. |
 | [Loops](notebooks/python-loop.ipynb) | `for` and `while` loops, running totals, tuple unpacking, dictionary iteration, loop `else`, and control with `pass`, `continue`, and `break`. |
-| [Functions](notebooks/python-functions.ipynb) | Definitions, defaults, printing versus returning, argument types and `+`, even-number checks and filtering, tuple unpacking, a guessing game, `*args`, `**kwargs`, alternating-case string exercises, `map()`, `filter()`, lambda expressions, nested functions, LEGB scope, `global`, twelve additional function exercises, and a bonus letter-pattern exercise. |
+| [Functions](notebooks/python-functions.ipynb) | Definitions, defaults, printing versus returning, argument types and `+`, even-number checks and filtering, tuple unpacking, a guessing game, `*args`, `**kwargs`, alternating-case string exercises, `map()`, `filter()`, lambda expressions, nested functions, LEGB scope, `global`, twelve additional function exercises, a bonus letter-pattern exercise, and homework on sphere volume, inclusive ranges, and letter-case counts. |
 | [File handling](notebooks/python-files.ipynb) | Reading, writing, appending, file positions, context managers, and file modes. |
 | [Practice exercises](notebooks/python-fun.ipynb) | Loops with strings and a list-based to-do example. |
 | [Tic-tac-toe](notebooks/python-tic-tac-toe.ipynb) | An interactive widget-based game with winner checks and a reset control. |
@@ -81,7 +81,7 @@ python example.py
 - **Interactive demos:** Run the setup cell to display the widgets. Use the emoji-rain demo's stop control to end the animation and the tic-tac-toe reset control to start a new game.
 - **Map, filter, and lambdas:** The map and filter section transforms numbers and strings with `map()`, keeps matching numbers with `filter()`, and uses short lambda expressions as callbacks. Both built-ins return iterators; the examples consume them with a loop or `list()`. Run the section in order: `my_nums` changes from five numbers to six, `check_even` is redefined, and a lambda replaces the named `square` function. The section ends by reversing each name's characters while preserving the order of the names.
 - **Nested statements and scope:** Follow the LEGB lookup order: local, enclosing, global, then built-in. The examples demonstrate shadowing, case-sensitive names (`X` versus `x`), and updating a module-level variable with `global`. The explanations also distinguish reading an enclosing name from rebinding it with `nonlocal`. Run the cells in order because `greet`, `func`, and `x` are redefined; the later `func()` takes no arguments and changes the global `x` from `50` to `100` when called.
-- **Function practice:** The functions notebook ends with twelve exercises and worked solutions, plus a bonus letter-pattern exercise. Topics include numeric conditions, string transformations, adjacent list values, summing selected values, ordered subsequences, and counting primes. Try each prompt before running its solution, then compare the sample calls with your own inputs. `animal_crackers` expects a two-word string and ignores letter case; `blackjack` expects three integers between `1` and `11`; `summer_69` assumes each `6` is followed by a `9`. Compare `count_primes` and `count_primes_v2` on the same integer inputs; both return `0` for values below `2`. The bonus `print_big` function supports lowercase letters `a` through `e` and prints a message for unsupported input.
+- **Function practice:** After the scope examples, the functions notebook includes twelve exercises and worked solutions, plus a bonus letter-pattern exercise, followed by Functions and Methods Homework. Topics include numeric conditions, string transformations, adjacent list values, summing selected values, ordered subsequences, and counting primes. Try each prompt before running its solution, then compare the sample calls with your own inputs. `animal_crackers` expects a two-word string and ignores letter case; `blackjack` expects three integers between `1` and `11`; `summer_69` assumes each `6` is followed by a `9`. Compare `count_primes` and `count_primes_v2` on the same integer inputs; both return `0` for values below `2`. The bonus `print_big` function supports lowercase letters `a` through `e` and prints a message for unsupported input.
 
 ### Function Practice Guide
 
@@ -102,6 +102,21 @@ These exercises are in [`python-functions.ipynb`](notebooks/python-functions.ipy
 | `spy_game` | Check for `0`, `0`, and `7` in order, allowing other values between them. |
 | `count_primes`, `count_primes_v2` | Count primes up to and including an integer using two approaches: division by previously found primes and trial division up to the candidate's square root. |
 | `print_big` (bonus) | Print a five-row star pattern for a lowercase letter from `a` through `e`. |
+
+### Functions and Methods Homework
+
+The final section of [`python-functions.ipynb`](notebooks/python-functions.ipynb) adds these exercises:
+
+| Function | Practice topic |
+| --- | --- |
+| `vol` | Return a sphere's volume from its radius using `(4/3) * pi * rad**3`. |
+| `ran_check` | Print whether an integer belongs to the inclusive range from `low` to `high`. |
+| `ran_check_bool` | Return the same inclusive integer-range check as a Boolean. |
+| `up_low` | Print the original string and its uppercase and lowercase letter counts using `isupper()` and `islower()`. |
+
+Use integer bounds with `low <= high` for the range exercises. Compare `ran_check`, which prints a message and returns `None`, with `ran_check_bool`, which returns `True` or `False`.
+
+`up_low` ignores characters with neither uppercase nor lowercase status, such as digits, spaces, and punctuation. It scans the string once in O(n) time with O(1) extra space for the counters. The sample `Hello Mr. Rogers, how are you this fine Tuesday?` produces 4 uppercase and 33 lowercase letters.
 
 ## Contributing
 
