@@ -18,7 +18,7 @@ Start with the introduction, then explore the topics below. All notebooks are in
 | [Operators and iteration tools](notebooks/python-operators.ipynb) | Comparisons, logical and membership operators, equality versus identity, floating-point comparisons, `range()`, `enumerate()`, `zip()`, `min()`, `max()`, random values, and user input; includes practice exercises, hints, and solutions. |
 | [Conditional statements](notebooks/python-statements.ipynb) | `if`, `elif`, and `else`; indentation, truthiness, branch order, and case-sensitive string comparisons, with practice prompts. |
 | [Loops](notebooks/python-loop.ipynb) | `for` and `while` loops, running totals, tuple unpacking, dictionary iteration, loop `else`, and control with `pass`, `continue`, and `break`. |
-| [Functions](notebooks/python-functions.ipynb) | Definitions, defaults, printing versus returning, argument types and `+`, even-number checks and filtering, tuple unpacking, a guessing game, `*args`, `**kwargs`, alternating-case string exercises, `map()`, `filter()`, lambda expressions, nested functions, LEGB scope, `global`, twelve additional function exercises, a bonus letter-pattern exercise, and homework on sphere volume, inclusive ranges, and letter-case counts. |
+| [Functions](notebooks/python-functions.ipynb) | Definitions, defaults, printing versus returning, argument types and `+`, even-number checks and filtering, tuple unpacking, a guessing game, `*args`, `**kwargs`, alternating-case string exercises, `map()`, `filter()`, lambda expressions, nested functions, LEGB scope, `global`, twelve additional function exercises, a bonus letter-pattern exercise, and homework on sphere volume, inclusive ranges, letter-case counts, unique elements, multiplication, palindromes, and pangrams. |
 | [File handling](notebooks/python-files.ipynb) | Reading, writing, appending, file positions, context managers, and file modes. |
 | [Practice exercises](notebooks/python-fun.ipynb) | Loops with strings and a list-based to-do example. |
 | [Tic-tac-toe](notebooks/python-tic-tac-toe.ipynb) | An interactive widget-based game with winner checks and a reset control. |
@@ -113,10 +113,18 @@ The final section of [`python-functions.ipynb`](notebooks/python-functions.ipynb
 | `ran_check` | Print whether an integer belongs to the inclusive range from `low` to `high`. |
 | `ran_check_bool` | Return the same inclusive integer-range check as a Boolean. |
 | `up_low` | Print the original string and its uppercase and lowercase letter counts using `isupper()` and `islower()`. |
+| `unique_list` | Return distinct hashable list elements using `list(set(lst))`; input order is not preserved. |
+| `multiply` | Return the product of all numbers in a list, starting from `1`. |
+| `palindrome` | Check whether a string reads the same backward after removing spaces and converting to lowercase. |
+| `ispangram` | Check whether a string contains every letter of an alphabet, defaulting to the lowercase English alphabet. |
 
 Use integer bounds with `low <= high` for the range exercises. Compare `ran_check`, which prints a message and returns `None`, with `ran_check_bool`, which returns `True` or `False`.
 
 `up_low` ignores characters with neither uppercase nor lowercase status, such as digits, spaces, and punctuation. It scans the string once in O(n) time with O(1) extra space for the counters. The sample `Hello Mr. Rogers, how are you this fine Tuesday?` produces 4 uppercase and 33 lowercase letters.
+
+`unique_list` requires hashable elements, such as numbers or strings. Its set conversion removes duplicates but does not guarantee the order of first occurrence, despite the sample call's comment. `multiply([1, 2, 3, -4])` returns `-24`; an empty list returns `1`.
+
+`palindrome` ignores literal spaces and letter case, so `palindrome('Nurses run')` returns `True`; punctuation and other whitespace remain significant. `ispangram` lowercases the input and checks for every character in `alphabet`. The default recognizes `The quick brown fox jumps over the lazy dog` as a pangram. Run the cell containing `import string` and the function definition before the sample calls.
 
 ## Contributing
 
